@@ -1,0 +1,23 @@
+
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Cambio de Email{% endblock %}
+{% block content %}
+<style>.errorlist{color:red;} label{display:none}</style>
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+      {% if 'register' in request.GET %}
+        <p style='color:green;'> Usuario registrado con exito :)</p>
+      {% endif %}
+        <form action="" method="post">{% csrf_token %}
+          <h3 class="mb-4">Cambio de Email </h3>
+            {{ form.as_p }}
+          <p><input type="submit" class="btn btn-primary btn-block" value="Actualizar Email"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
